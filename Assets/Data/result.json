@@ -1,0 +1,678 @@
+{
+	"TeamBlue": [
+		{
+			"UnitId": "80001-10003",
+			"HP": 1000,
+			"Position": 1
+		},
+		{
+			"UnitId": "80001-10002",
+			"HP": 1000,
+			"Position": 2
+		},
+		{
+			"UnitId": "80001-10001",
+			"HP": 1000,
+			"Position": 3
+		}
+	],
+	"TeamRed": [
+		{
+			"UnitId": "90001-10006",
+			"HP": 1000,
+			"Position": 1
+		},
+		{
+			"UnitId": "90001-10005",
+			"HP": 1000,
+			"Position": 2
+		},
+		{
+			"UnitId": "90001-10004",
+			"HP": 1000,
+			"Position": 3
+		}
+	],
+	"PassiveRound": {
+		"RoundType": 0,
+		"ActionList": [
+			{
+				"PassiveSkill": {
+					"Caster": "90001-10004",
+					"SkillID": 20009,
+					"Effects": [
+						{
+							"NodeID": "1",
+							"EffectID": 30011,
+							"EffectTypeID": 78,
+							"Caster": "90001-10004",
+							"Targets": ["80001-10001"],
+							"AuraEffectType": [8],
+							"TypeName": "AddAURA"
+						}
+					]
+				}
+			}
+		]
+	},
+	"PrepareRound": {
+		"RoundType": 1,
+		"ActionList": [
+			{
+				"CommandSkill": {
+					"Caster": "80001-10001",
+					"SkillID": 20007,
+					"Effects": [
+						{
+							"NodeID": "2",
+							"EffectID": 30007,
+							"EffectTypeID": 80,
+							"Caster": "80001-10001",
+							"Targets": ["80001-10001"],
+							"DotEffectType": [3],
+							"TypeName": "AddDOT"
+						}
+					]
+				}
+			}
+		]
+	},
+	"BattleRound": [
+		{
+			"RoundType": 2,
+			"ActionList": [
+				{
+					"RoundBegin": {
+						"Effects": [
+							{
+								"NodeID": "3",
+								"EffectID": 30012,
+								"EffectTypeID": 8,
+								"Caster": "80001-10001",
+								"Targets": ["80001-10001"],
+								"Value": [-10],
+								"ResultValue": [85],
+								"ValueType": 1,
+								"TypeName": "IntDec"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10004"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10004",
+						"Targets": ["80001-10003"],
+						"Effects": [
+							{
+								"NodeID": "4",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10004",
+								"Targets": ["80001-10003"],
+								"Damage": [209],
+								"LeftHP": [791],
+								"CalcDamage": [209],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10005"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10005",
+						"Targets": ["80001-10001"],
+						"Effects": [
+							{
+								"NodeID": "5",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10005",
+								"Targets": ["80001-10001"],
+								"Damage": [186],
+								"LeftHP": [814],
+								"CalcDamage": [186],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10002"
+					}
+				},
+				{
+					"ActiveSkill": {
+						"Caster": "80001-10002",
+						"SkillID": 20008,
+						"Effects": [
+							{
+								"NodeID": "6",
+								"EffectID": 30009,
+								"EffectTypeID": 79,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"BuffEffectType": [5],
+								"TypeName": "AddBUFF"
+							},
+							{
+								"NodeID": "7",
+								"EffectID": 30010,
+								"EffectTypeID": 5,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"Value": [10],
+								"ResultValue": [112],
+								"ValueType": 1,
+								"TypeName": "DefAdd"
+							}
+						]
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10002",
+						"Targets": ["90001-10005"],
+						"Effects": [
+							{
+								"NodeID": "8",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10002",
+								"Targets": ["90001-10005"],
+								"Damage": [178],
+								"LeftHP": [822],
+								"CalcDamage": [178],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10003"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10003",
+						"Targets": ["90001-10005"],
+						"Effects": [
+							{
+								"NodeID": "9",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10003",
+								"Targets": ["90001-10006"],
+								"Damage": [130],
+								"LeftHP": [870],
+								"CalcDamage": [130],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10001"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10001",
+						"Targets": ["90001-10006"],
+						"Effects": [
+							{
+								"NodeID": "10",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10001",
+								"Targets": ["90001-10006"],
+								"Damage": [134],
+								"LeftHP": [606],
+								"CalcDamage": [134],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10006"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10006",
+						"Targets": ["80001-10003"],
+						"Effects": [
+							{
+								"NodeID": "11",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10006",
+								"Targets": ["80001-10003"],
+								"Damage": [104],
+								"LeftHP": [478],
+								"CalcDamage": [104],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"RoundEnd": {
+						"Effects": [
+							{
+								"NodeID": "12",
+								"EffectID": 30012,
+								"EffectTypeID": 83,
+								"Caster": "90001-10004",
+								"Targets": ["80001-10001"],
+								"SkillID": 20009,
+								"TypeName": "ExitEffectType"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"RoundType": 2,
+			"ActionList": [
+				{
+					"RoundBegin": {
+						"Effects": [
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10004"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10004",
+						"Targets": ["80001-10002"],
+						"Effects": [
+							{
+								"NodeID": "13",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10004",
+								"Targets": ["80001-10003"],
+								"Damage": [195],
+								"LeftHP": [-30],
+								"CalcDamage": [195],
+								"TypeName": "PhysicalDamage"
+							},
+							{
+								"NodeID": "13-14",
+								"StateID": 1,
+								"Targets": ["80001-10003"],
+								"StateName": "HSDead"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10005"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10005",
+						"Targets": ["80001-10002"],
+						"Effects": [
+							{
+								"NodeID": "15",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10005",
+								"Targets": ["80001-10002"],
+								"Damage": [192],
+								"LeftHP": [808],
+								"CalcDamage": [192],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10002",
+						"Effects": [
+							{
+								"NodeID": "16",
+								"EffectID": 30010,
+								"EffectTypeID": 83,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"SkillID": 20008,
+								"TypeName": "ExitEffectType"
+							}
+						]
+					}
+				},
+				{
+					"ActiveSkill": {
+						"Caster": "80001-10002",
+						"SkillID": 20008,
+						"Effects": [
+							{
+								"NodeID": "17",
+								"EffectID": 30009,
+								"EffectTypeID": 79,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"BuffEffectType": [5],
+								"TypeName": "AddBUFF"
+							},
+							{
+								"NodeID": "18",
+								"EffectID": 30010,
+								"EffectTypeID": 5,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"Value": [10],
+								"ResultValue": [112],
+								"ValueType": 1,
+								"TypeName": "DefAdd"
+							}
+						]
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10002",
+						"Targets": ["90001-10005"],
+						"Effects": [
+							{
+								"NodeID": "19",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10002",
+								"Targets": ["90001-10005"],
+								"Damage": [154],
+								"LeftHP": [490],
+								"CalcDamage": [154],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10001"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10001",
+						"Targets": ["90001-10004"],
+						"Effects": [
+							{
+								"NodeID": "20",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10001",
+								"Targets": ["90001-10006"],
+								"Damage": [135],
+								"LeftHP": [207],
+								"CalcDamage": [135],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10006"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10006",
+						"Targets": ["80001-10001"],
+						"Effects": [
+							{
+								"NodeID": "21",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10006",
+								"Targets": ["80001-10002"],
+								"Damage": [79],
+								"LeftHP": [537],
+								"CalcDamage": [79],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"RoundEnd": {
+						"Effects": [
+							{
+								"NodeID": "22",
+								"EffectID": 30012,
+								"EffectTypeID": 83,
+								"Caster": "90001-10004",
+								"Targets": ["80001-10001"],
+								"SkillID": 20009,
+								"TypeName": "ExitEffectType"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"RoundType": 2,
+			"ActionList": [
+				{
+					"RoundBegin": {
+						"Effects": [
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10004"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10004",
+						"Targets": ["80001-10001"],
+						"Effects": [
+							{
+								"NodeID": "23",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10004",
+								"Targets": ["80001-10001"],
+								"Damage": [218],
+								"LeftHP": [410],
+								"CalcDamage": [218],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10005"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10005",
+						"Targets": ["80001-10002"],
+						"Effects": [
+							{
+								"NodeID": "24",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10005",
+								"Targets": ["80001-10002"],
+								"Damage": [150],
+								"LeftHP": [116],
+								"CalcDamage": [150],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10002",
+						"Effects": [
+							{
+								"NodeID": "25",
+								"EffectID": 30010,
+								"EffectTypeID": 83,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"SkillID": 20008,
+								"TypeName": "ExitEffectType"
+							},
+							{
+								"NodeID": "26",
+								"EffectID": 30010,
+								"EffectTypeID": 83,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"SkillID": 20008,
+								"TypeName": "ExitEffectType"
+							}
+						]
+					}
+				},
+				{
+					"ActiveSkill": {
+						"Caster": "80001-10002",
+						"SkillID": 20008,
+						"Effects": [
+							{
+								"NodeID": "27",
+								"EffectID": 30009,
+								"EffectTypeID": 79,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"BuffEffectType": [5],
+								"TypeName": "AddBUFF"
+							},
+							{
+								"NodeID": "28",
+								"EffectID": 30010,
+								"EffectTypeID": 5,
+								"Caster": "80001-10002",
+								"Targets": ["80001-10002"],
+								"Value": [10],
+								"ResultValue": [112],
+								"ValueType": 1,
+								"TypeName": "DefAdd"
+							}
+						]
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10002",
+						"Targets": ["90001-10006"],
+						"Effects": [
+							{
+								"NodeID": "29",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10002",
+								"Targets": ["90001-10004"],
+								"Damage": [77],
+								"LeftHP": [923],
+								"CalcDamage": [77],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "80001-10001",
+						"Effects": [
+							{
+								"NodeID": "30",
+								"EffectID": 30008,
+								"EffectTypeID": 83,
+								"Caster": "80001-10001",
+								"Targets": ["80001-10001"],
+								"SkillID": 20007,
+								"TypeName": "ExitEffectType"
+							}
+						]
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "80001-10001",
+						"Targets": ["90001-10004"],
+						"Effects": [
+							{
+								"NodeID": "31",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "80001-10001",
+								"Targets": ["90001-10005"],
+								"Damage": [111],
+								"LeftHP": [47],
+								"CalcDamage": [111],
+								"TypeName": "PhysicalDamage"
+							}
+						]
+					}
+				},
+				{
+					"BeforeAction": {
+						"Caster": "90001-10006"
+					}
+				},
+				{
+					"NormalAttack": {
+						"Caster": "90001-10006",
+						"Targets": ["80001-10002"],
+						"Effects": [
+							{
+								"NodeID": "32",
+								"EffectID": 1,
+								"EffectTypeID": 2,
+								"Caster": "90001-10006",
+								"Targets": ["80001-10001"],
+								"Damage": [85],
+								"LeftHP": [-79],
+								"CalcDamage": [85],
+								"TypeName": "PhysicalDamage"
+							},
+							{
+								"NodeID": "32-33",
+								"StateID": 1,
+								"Targets": ["80001-10001"],
+								"StateName": "HSDead"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
